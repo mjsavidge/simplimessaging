@@ -14,7 +14,7 @@ final class ConversationsViewController: UIViewController {
 
     private let spinner = JGProgressHUD(style: .dark)
 
-    private var conversations = [ConversationModel]()
+    private var conversations = [Conversation]()
 
     private let tableView: UITableView = {
         let table = UITableView()
@@ -196,7 +196,7 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
         openConversation(model)
     }
 
-    func openConversation(_ model: ConversationModel) {
+    func openConversation(_ model: Conversation) {
         let vc = ChatViewController(with: model.otherUserEmail, id: model.id)
         vc.title = model.name
         vc.navigationItem.largeTitleDisplayMode = .never
